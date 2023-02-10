@@ -14,9 +14,6 @@ class StockResource(Resource):
     """
 
     def get(self):
-        # TODO: Implement the call to the stooq service here. The stock code to query the API
-        # should come in a query parameter.
-
         stock = list(request.values)[0]
         r = requests.get('https://stooq.com/q/l/?s=' + stock + '&f=sd2t2ohlcvn&h&e=csv').content
         r = r.decode('utf8')
