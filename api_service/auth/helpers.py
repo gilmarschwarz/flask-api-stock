@@ -9,7 +9,6 @@ auth = HTTPBasicAuth()
 
 @auth.verify_password
 def verify(username, password):
-    # TODO: Use the data in the database to validate the user credentials.
 
     user = User.query.filter_by(username=username).first()
 
